@@ -2,28 +2,62 @@ package com.qa.portfolio;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 
 public class FirstSeleniumTest {
 
-    public static void main(String[] args) {
 
-        WebDriver driver = new ChromeDriver();
+	public static void main(String[] args) {
 
-        try {
-            driver.get("https://www.saucedemo.com/");
 
-            String actualTitle = driver.getTitle();
+		//Invoking Browser
 
-            System.out.println("Page title: " + actualTitle);
+		//Chrome - ChromeDriver exten->Methods close get
 
-            if (actualTitle.equals("Swag Labs")) {
-                System.out.println("TEST PASSED");
-            } else {
-                System.out.println("TEST FAILED");
-            }
+		//Firefox- FirefoxDriver ->methods close get
 
-        } finally {
-            driver.quit();
-        }
-    }
+		// WebDriver  close  get
+
+		//WebDriver methods + class methods
+
+
+		// Chrome
+
+		ChromeOptions options = new ChromeOptions();
+
+		options.addArguments("--remote-allow-origins=*");
+
+
+		WebDriver driver = new ChromeDriver(options);
+
+
+		//Firefox
+
+
+		// WebDriver driver1 = new FirefoxDriver();
+
+
+		//Microsoft Edge
+
+		// WebDriver driver2 = new EdgeDriver();
+
+
+		driver.get("https://rahulshettyacademy.com");
+
+		System.out.println(driver.getTitle());
+
+		System.out.println(driver.getCurrentUrl());
+
+		driver.close();
+
+		//driver.quit();
+
+
+	}
+
 }
+
