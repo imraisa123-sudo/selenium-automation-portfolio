@@ -46,7 +46,7 @@ public class FirstSeleniumTest {
 		// WebDriver driver2 = new EdgeDriver();
 
 
-		driver.get("https://rahulshettyacademy.com");
+		driver.get("https://github.com/imraisa123-sudo/selenium-automation-portfolio");
 
 		System.out.println(driver.getTitle());
 
